@@ -29,6 +29,7 @@ pipeline {
                     }
                     steps {
                         // Unit tests with Vitest
+                        sh 'rm -rf node_modules'
                         sh 'npm ci'
                         sh 'npx vitest run --reporter=verbose'
                     }
@@ -41,6 +42,7 @@ pipeline {
                         }
                     }
                     steps {
+                        sh 'rm -rf node_modules'
                         sh 'npm ci'
                         sh 'npx playwright test'
                     }
