@@ -58,7 +58,5 @@ pipeline {
                 echo 'Mock deployment was successful!'
             }
         }
-
-        
     }
 }
