@@ -10,7 +10,6 @@ pipeline {
             agent {
                 docker {
                     image 'node:22-alpine'
-                    reuseNode: true
                 }
             }
             steps {
