@@ -24,12 +24,12 @@ pipeline {
                     agent {
                         docker {
                             image 'node:22-alpine'
-                            reuseNode true
+                            // reuseNode true
                         }
                     }
                     steps {
                         // Unit tests with Vitest
-                        sh 'rm -rf node_modules'
+                        // sh 'rm -rf node_modules'
                         sh 'npm ci'
                         sh 'npx vitest run --reporter=verbose'
                     }
@@ -38,11 +38,11 @@ pipeline {
                     agent {
                         docker {
                             image 'mcr.microsoft.com/playwright:v1.54.2-jammy'
-                            reuseNode true
+                            // reuseNode true
                         }
                     }
                     steps {
-                        sh 'rm -rf node_modules'
+                        // sh 'rm -rf node_modules'
                         sh 'npm ci'
                         sh 'npx playwright test'
                     }
